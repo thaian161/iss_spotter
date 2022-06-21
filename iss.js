@@ -17,6 +17,7 @@ const fetchMyIP = function (callback) {
     //   callback(error, null);
     //   return;
     // }
+    //
     if (error) return callback(error, null);
 
     // if non-200 status, assume server error
@@ -34,7 +35,7 @@ const fetchMyIP = function (callback) {
     //Since it is a string => hard to read and work on, use parse and print body to the console as an object
     const ip = JSON.parse(body).ip;
     //console.log(typeof ip); //string
-    callback(null, ip);
+    callback(null, ip); //(no error, ip)
   });
 };
 
